@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- SEO Meta Tags -->
+<meta name="description" content="Parsa Heydari - AI Researcher & Software Engineering Student Portfolio">
+<meta property="og:title" content="Parsa Heydari Portfolio">
+<meta property="og:description" content="Exploring the intersection of intelligence, code, and creativity.">
+<meta property="og:type" content="website">
+
+<title>Parsa Heydari | AI Research & Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #0284c7;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --muted: #475569;
+    --card: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --btn-text: #ffffff;
+  }
+  
+  /* Dark Mode Variables */
+  body.dark {
+    --accent: #38bdf8;
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --card: #1e293b;
+    --shadow: 0 4px 20px rgba(0,0,0,0.4);
+    --btn-text: #0f172a;
+  }
+
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    font-family: "Inter", "Vazirmatn", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card);
+    padding: 15px 5%;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin: 0;
+    font-weight: 700;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    margin-left: 20px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 20px;
+  }
+
+  .btn-control {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  
+  .btn-control:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Sections */
+  section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 24px;
+  }
+
+  h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 5px;
+    border-radius: 2px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    min-height: 80vh;
+    margin-top: 20px;
+  }
+
+  .hero-text {
+    flex: 2 1 400px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 1.125rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff; /* Always white for readability on accent color */
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+  }
+
+  .btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Hero Image */
+  .hero-img {
+    flex: 1 1 250px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-img img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border: 4px solid var(--accent);
+    box-shadow: var(--shadow);
+    transition: border-radius 0.5s ease;
+  }
+  
+  .hero-img:hover img {
+    border-radius: 50%;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    border-top: 1px solid var(--muted);
+    opacity: 0.6;
+    margin-top: 100px;
+  }
+
+  /* Animations */
+  [data-anim] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+
+  [data-anim].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    nav { width: 100%; justify-content: space-between; font-size: 14px; }
+    nav a { margin: 0; }
+    .hero-text h2 { font-size: 2rem; }
+    .controls { width: 100%; justify-content: center; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Parsa Heydari</h1>
+  <div style="display: flex; flex-direction: column; align-items: flex-end; width: 100%; max-width: 600px;">
+    <nav>
+      <a href="#about" class="nav-link" data-en="About" data-fa="درباره من">About</a>
+      <a href="#skills" class="nav-link" data-en="Skills" data-fa="مهارت‌ها">Skills</a>
+      <a href="#projects" class="nav-link" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
+      <a href="#contact" class="nav-link" data-en="Contact" data-fa="ارتباط">Contact</a>
+    </nav>
+  </div>
+  <div class="controls">
+      <button id="theme-toggle" class="btn-control" title="Toggle Theme">🌙</button>
+      <button id="lang-toggle" class="btn-control">FA</button>
+  </div>
+</header>
+
+<!-- English Version -->
+<main id="en">
+  <section class="hero" data-anim>
+    <div class="hero-text">
+      <h2>Software Engineering Student <br/>& AI Researcher</h2>
+      <p>Exploring the intersection of intelligence, code, and creativity — building data-driven systems that make technology more human.</p>
+      <div class="buttons">
+        <!-- Replace '#' with your actual resume link later -->
+        <a href="Parsa_Heydari_Resume.pdf" target="_blank" class="btn-primary">📄 View Resume</a>
+        <a href="#contact" class="btn-outline">💬 Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.imgur.com/4M7IWwP.png" alt="Parsa Heydari Portrait">
+    </div>
+  </section>
+
+  <section id="about" data-anim>
+    <h3>About Me</h3>
+    <p>I’m <strong>Parsa Heydari</strong>, a software engineering student, AI researcher, and English instructor (TTC, Sitak). Passionate about Python, machine learning, and network systems. Guest on <i>Iran Digital</i> and participant in the National Elites Summit.</p>
+  </section>
+
+  <section id="skills" data-anim>
+    <h3>Core Skills</h3>
+    <ul>
+      <li><strong>Development:</strong> Python, TensorFlow, Machine Learning, Git/GitLab.</li>
+      <li><strong>Data & DB:</strong> SQL Server, MySQL, Power BI.</li>
+      <li><strong>Networking:</strong> Network+, CCNA, CCNP (Basic Knowledge).</li>
+      <li><strong>Soft Skills:</strong> English Communication (TTC Certified), Leadership, Problem Solving.</li>
+    </ul>
+  </section>
+
+  <section id="projects" data-anim>
+    <h3>Featured Projects</h3>
+    <div style="background: var(--card); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); border-left: 4px solid var(--accent);">
+      <h4 style="margin-top:0;">🚗 AI-Powered Smart Vehicle Diagnostic System</h4>
+      <p style="color:var(--muted); font-size: 0.95rem;">Designed and developed a Python-based machine learning model to detect, analyze, and predict vehicle faults, increasing diagnostic accuracy.</p>
+      <small style="color:var(--accent); font-weight:600;">Tech Stack: Python, ML Libraries, Data Analysis</small>
+    </div>
+  </section>
+
+  <section id="contact" data-anim>
+    <h3>Contact</h3>
+    <p>Let's build something amazing together.</p>
+    <p>📧 <a href="mailto:heidarip680@gmail.com" style="color:var(--accent); text-decoration:none;">heidarip680@gmail.com</a></p>
+    <div class="buttons" style="margin-top: 20px;">
+      <a href="https://linkedin.com/in/parsa-heidari-882ab22bb" target="_blank" class="btn-outline">LinkedIn</a>
+      <a href="https://github.com/ParsaGg0" target="_blank" class="btn-outline">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<!-- Persian Version -->
+<main id="fa" dir="rtl" style="display:none;">
+  <section class="hero" data-anim>
+    <div class="hero-text">
+      <h2>دانشجوی مهندسی نرم‌افزار <br/>و پژوهشگر هوش مصنوعی</h2>
+      <p>کاوش در مرزهای هوش، کد و خلاقیت — ساخت سیستم‌های داده‌محوری که فناوری را انسانی‌تر می‌کنند.</p>
+      <div class="buttons">
+        <a href="Parsa_Heydari_Resume.pdf" target="_blank" class="btn-primary">📄 مشاهده رزومه</a>
+        <a href="#contact" class="btn-outline">💬 ارتباط با من</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.imgur.com/4M7IWwP.png" alt="پارسا حیدری">
+    </div>
+  </section>
+
+  <section id="about" data-anim>
+    <h3>درباره من</h3>
+    <p>من <strong>پارسا حیدری</strong> هستم؛ دانشجوی مهندسی نرم‌افزار، پژوهشگر هوش مصنوعی و مدرس زبان انگلیسی (دارای مدرک TTC از آموزشگاه سیتاک). علاقه‌مند به پایتون، یادگیری ماشین و سیستم‌های شبکه. مهمان برنامه <i>ایران دیجیتال</i> و شرکت‌کننده در همایش ملی نخبگان کشور.</p>
+  </section>
+
+  <section id="skills" data-anim>
+    <h3>مهارت‌ها</h3>
+    <ul>
+      <li><strong>برنامه‌نویسی:</strong> پایتون (Python)، تنسورفلو (TensorFlow)، یادگیری ماشین، گیت.</li>
+      <li><strong>داده و پایگاه‌داده:</strong> SQL Server, MySQL, Power BI.</li>
+      <li><strong>شبکه:</strong> Network+, CCNA, CCNP (مقدماتی).</li>
+      <li><strong>مهارت‌های نرم:</strong> تدریس زبان انگلیسی (TTC)، رهبری تیم، حل مسئله.</li>
+    </ul>
+  </section>
+
+  <section id="projects" data-anim>
+    <h3>پروژه‌های شاخص</h3>
+    <div style="background: var(--card); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); border-right: 4px solid var(--accent);">
+      <h4 style="margin-top:0;">🚗 دیاگ هوشمند خودرو با هوش مصنوعی</h4>
+      <p style="color:var(--muted); font-size: 0.95rem;">طراحی و توسعه مدلی برای تحلیل خطاهای خودرو با استفاده از الگوریتم‌های یادگیری ماشین و پایتون جهت افزایش دقت عیب‌یابی.</p>
+      <small style="color:var(--accent); font-weight:600;">تکنولوژی‌ها: Python, ML Libraries</small>
+    </div>
+  </section>
+
+  <section id="contact" data-anim>
+    <h3>ارتباط با من</h3>
+    <p>بیایید با هم دنیای فناوری را تغییر دهیم.</p>
+    <p>📧 <a href="mailto:heidarip680@gmail.com" style="color:var(--accent); text-decoration:none;">heidarip680@gmail.com</a></p>
+    <div class="buttons" style="margin-top: 20px;">
+      <a href="https://linkedin.com/in/parsa-heidari-882ab22bb" target="_blank" class="btn-outline">لینکدین</a>
+      <a href="https://github.com/ParsaGg0" target="_blank" class="btn-outline">گیت‌هاب</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Parsa Heydari. All rights reserved. <br/>
+  <span style="font-size:0.8em">Designed with 💻 & 🧠</span>
+</footer>
+
+<script>
+  // Scroll Animation Logic
+  const items = document.querySelectorAll("[data-anim]");
+  const show = () => items.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) el.classList.add("visible");
+  });
+  
+  document.addEventListener("scroll", show);
+  window.addEventListener("load", show);
+
+  // Language Toggle Logic
+  const langBtn = document.getElementById("lang-toggle");
+  // FIX: Renamed variables to avoid conflict with global ID references
+  const enContent = document.getElementById("en");
+  const faContent = document.getElementById("fa");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  langBtn.onclick = () => {
+    const isEnglish = enContent.style.display !== "none";
+    
+    if (isEnglish) {
+      // Switch to Persian
+      enContent.style.display = "none";
+      faContent.style.display = "block";
+      langBtn.textContent = "EN";
+      document.documentElement.lang = "fa";
+      
+      // Update Nav Text
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute("data-fa");
+      });
+    } else {
+      // Switch to English
+      faContent.style.display = "none";
+      enContent.style.display = "block";
+      langBtn.textContent = "FA";
+      document.documentElement.lang = "en";
+      
+      // Update Nav Text
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute("data-en");
+      });
+    }
+  };
+
+  // Dark Mode Toggle Logic
+  const themeBtn = document.getElementById("theme-toggle");
+  
+  // Check local storage for preference
+  if(localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    themeBtn.textContent = "☀️";
+  }
+
+  themeBtn.onclick = () => {
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")){
+      themeBtn.textContent = "☀️";
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeBtn.textContent = "🌙";
+      localStorage.setItem('theme', 'light');
+    }
+  };
+</script>
+</body>
+</html>
